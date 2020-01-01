@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+vsftpd_repos_create: "{{ _vsftpd_repos_create['all']
+  | union ( _vsftpd_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+vsftpd_repos_download: "{{ _vsftpd_repos_download['all']
+  | union ( _vsftpd_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+vsftpd_templates_copy: "{{ _vsftpd_templates_copy['all']
+  | union ( _vsftpd_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+vsftpd_services_enable: "{{ _vsftpd_services_enable['all']
+  | union ( _vsftpd_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+vsftpd_selinux_enable: "{{ _vsftpd_selinux_enable['all']
+  | union ( _vsftpd_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+vsftpd_packages_remove: "{{ _vsftpd_packages_remove['all']
+  | union ( _vsftpd_packages_remove[my_os]
+  | default([]) ) }}"
+vsftpd_packages_repos: "{{ _vsftpd_packages_repos['all']
+  | union ( _vsftpd_packages_repos[my_os]
+  | default([]) ) }}"
+vsftpd_packages_prereq: "{{ _vsftpd_packages_prereq['all']
+  | union ( _vsftpd_packages_prereq[my_os]
+  | default([]) ) }}"
+vsftpd_packages_install: "{{ _vsftpd_packages_install['all']
+  | union ( _vsftpd_packages_install[my_os]
+  | default([]) ) }}"
