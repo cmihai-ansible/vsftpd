@@ -23,12 +23,11 @@ Role Variables
 --------------
 
 ```yaml
-vsftpd_remove_packages: true
 vsftpd_enable_service: true
-vsftpd_enable_selinux: true
+vsftpd_copy_templates: true
 vsftpd_firewall_configure: true
 vsftpd_firewall_rules:
-  - service:
+  - service: ftp
 ```
 
 Dependencies
@@ -51,11 +50,11 @@ Example Playbook
       import_role:
         name: crivetimihai.vsftpd
       vars:
-        vsftpd_remove_packages: true
         vsftpd_enable_service: true
+        vsftpd_copy_templates: true
         vsftpd_firewall_configure: true
         vsftpd_firewall_rules:
-          - service:
+          - service: ftp
       tags: vsftpd
 ```
 

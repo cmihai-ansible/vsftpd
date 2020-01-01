@@ -6,4 +6,3 @@ vsftpd_copy_templates: true
 vsftpd_firewall_configure: true
 vsftpd_firewall_rules:
   - service: ftp
-vsftpd_selinux_users:
