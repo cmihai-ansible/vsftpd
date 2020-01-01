@@ -28,6 +28,14 @@ vsftpd_copy_templates: true
 vsftpd_firewall_configure: true
 vsftpd_firewall_rules:
   - service: ftp
+vsftpd_enable_selinux: true
+vsftp_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true
+  - name: ftpd_full_access
+    state: true
+    persistent: true
 ```
 
 Dependencies
@@ -55,6 +63,14 @@ Example Playbook
         vsftpd_firewall_configure: true
         vsftpd_firewall_rules:
           - service: ftp
+        vsftpd_enable_selinux: true
+        vsftp_selinux_booleans:
+          - name: ftp_home_dir
+            state: true
+            persistent: true
+          - name: ftpd_full_access
+            state: true
+            persistent: true
       tags: vsftpd
 ```
 

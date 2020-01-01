@@ -27,4 +27,5 @@
 - include: install.yml
 - include: template.yml
 - include: firewalld.yml
+- include: selinux.yml
 - include: configure.yml
