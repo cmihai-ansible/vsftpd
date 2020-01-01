@@ -1,13 +1,25 @@
 ---
 # Configuration templates to copy
 _vsftpd_templates_copy:
-  all:
+  all: []
+  CentOS_7:
     - src: vsftpd.conf
       dest: /etc/vsftpd/vsftpd.conf
-  CentOS_7: []
-  RedHat_7: []
-  CentOS_8: []
-  RedHat_8: []
-  Fedora_31: []
-  Debian_10: []
-  Ubuntu_18: []
+  RedHat_7:
+    - src: vsftpd.conf
+      dest: /etc/vsftpd/vsftpd.conf
+  CentOS_8:
+    - src: vsftpd.conf
+      dest: /etc/vsftpd/vsftpd.conf
+  RedHat_8:
+    - src: vsftpd.conf
+      dest: /etc/vsftpd/vsftpd.conf
+  Fedora_31:
+    - src: vsftpd.conf
+      dest: /etc/vsftpd/vsftpd.conf
+  Debian_10:
+    - src: vsftpd.conf
+      dest: /etc/vsftpd.conf
+  Ubuntu_18:
+    - src: vsftpd.conf
+      dest: /etc/vsftpd.conf
